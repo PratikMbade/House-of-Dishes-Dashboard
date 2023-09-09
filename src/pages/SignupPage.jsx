@@ -18,7 +18,7 @@ const SignupPage = () => {
       
         <div className=' bg-gradient-to-b from-zinc-600 to-black p-0.5  rounded-lg'>
 
-        <div className=' bg-gradient-to-b relative from-zinc-950 to-black backdrop-filter md:backdrop-blur-xl h-full w-full items-center p-4  back md:p-16 rounded-lg flex flex-col justify-center'>
+        <div className=' bg-gradient-to-b relative from-zinc-950 to-black backdrop-filter backdrop-blur-xl h-full w-full items-center p-4  back md:p-16 rounded-lg flex flex-col justify-center'>
         <div className='w-[300px] h-[300px]  rounded-full absolute top-[-40px] left-[-40px] blur-3xl z-[-10] bg-[#1439b329]  '></div>
         
         
