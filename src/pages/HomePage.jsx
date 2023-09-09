@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 import { VscDebugStart } from "react-icons/vsc";
 const HomePage = () => {
   return (
-    <div className='bg-black min-h-screen text-white flex flex-col lg:flex-row md:gap-16 items-center justify-center font-primary px-8'>
-      <div className='left-section w-full md:w-1/2'>
-      <h2 className='font-semibold text-2xl md:text-4xl lg:text-5xl py-8'><p className='text-amber-500 inline pr-2'>Welcome</p> 
+    <div className='bg-black min-h-screen text-white flex flex-col-reverse lg:flex-row md:gap-16 md:items-center justify-center font-primary px-8'>
+      <div className='left-section relative w-full md:w-1/2'>
+      <h2 className='font-semibold text-2xl md:text-4xl lg:text-5xl z-10 py-8'><p className='text-amber-500 inline pr-2'>Welcome</p> 
       to House of Dishes <p>Dashboard Chef </p> </h2>
-
+      <div className='w-[300px] h-[300px]  rounded-full absolute top-[-40px] left-[-40px] blur-3xl  bg-[#b38b1429]  '></div>
       <p className='description text-lg md:text-xl lg:text-2xl pb-8 '>Discover endless recipes and harness AI guidance for seamless cooking on our website. Elevate your kitchen game today !</p>
 
       <Link to='/signup'>
-      <button class="get-started group relative px-8 py-3 overflow-hidden font-medium rounded-xl border border-yellow-800  text-xl md:text-2xl shadow-2xl shadow-[#ff910025] mr-8 my-8">
-      <div class="absolute inset-0 w-0 bg-[#ff910032] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-      <span class=" text-white">Get Started</span>
+      <button className="get-started group relative px-8 py-3 overflow-hidden font-medium rounded-xl border border-yellow-800  text-xl md:text-2xl shadow-2xl shadow-[#ff910025] mr-8 my-8">
+      <div className="absolute inset-0 w-0 bg-[#ff910032] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+      <span className=" text-white">Get Started</span>
       </button>
       </Link>
       
@@ -24,7 +24,7 @@ const HomePage = () => {
       </div>
 
       <div>
-        <img className='hidden md:flex w-[500px] h-auto ' src="./assets/LOGO.png" alt="Logo" />
+        <img className=' md:flex w-[300px] md:w-[500px] h-auto ' src="./assets/LOGO.png" alt="Logo" />
       </div>
       
     </div>
