@@ -5,6 +5,13 @@
 
 .active{
     color: #f59e0b;
+   
+    padding: 6px;
+    border-radius: 10px;
+    border: 1px solid #474747;
+    
+    background: linear-gradient(to right,#131313, #000000) ;
+   
 }
 
 body{
