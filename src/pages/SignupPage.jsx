@@ -12,9 +12,10 @@ const SignupPage = () => {
 
   return (
     <div className='px-4 sm:px-4 pb-16'>
-    <form className='signup  flex flex-col  justify-center z-10 items-center text-white font-primary' onSubmit={handleSubmit}>
+      <form className='signup  flex flex-col  justify-center z-10 items-center text-white font-primary' onSubmit={handleSubmit}>
       <h3 className='text-3xl font-semibold  mt-8  text-center  py-2'>Create a new account</h3>
-      <p className='text-center mb-8'>Enter the fields below to get started</p>
+      <p className='text-center mb-8 text-base text-zinc-300'>Enter the fields below to get started</p>
+      
       
         <div className=' bg-gradient-to-b from-zinc-600 to-black p-0.5  rounded-lg'>
 
@@ -76,7 +77,7 @@ const SignupPage = () => {
       <span className=" text-white">Create Account</span>
       </button>
 
-      <p className='text-center '>Already a member ? <Link to='/login'>
+      <p className='text-center text-zinc-300 '>Already have an account ? <Link to='/login'>
       <button className='border rounded-xl px-4 py-1 mx-2 font-medium bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.2)_50%,transparent_75%,transparent_100%)] bg-zinc-950 relative max-w-md overflow-hidden  border-zinc-700   bg-[length:250%_250%,100%_100%] bg-[position:-100%_0,0_0] bg-no-repeat shadow-2xl transition-[background-position_0s_ease] hover:bg-[position:200%_0,0_0] hover:duration-[1200ms]'>Log In</button>
       </Link></p>
         
