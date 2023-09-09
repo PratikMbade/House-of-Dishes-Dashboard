@@ -10,3 +10,29 @@
 body{
     background: #000;
 }
+
+.get-started {
+    
+    
+    border: 1px solid #0000;
+    
+    background: linear-gradient(to right,#131313, #000000) padding-box, linear-gradient(
+          var(--angle),
+          #070707,
+          #fe9f11
+        ) border-box;
+    animation: 8s rotate linear infinite;
+  }
+  
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+  
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  

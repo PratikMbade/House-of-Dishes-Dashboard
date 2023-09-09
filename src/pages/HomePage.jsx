@@ -12,7 +12,7 @@ const HomePage = () => {
       <p className='description text-lg md:text-xl lg:text-2xl pb-8 '>Discover endless recipes and harness AI guidance for seamless cooking on our website. Elevate your kitchen game today !</p>
 
       <Link to='/signup'>
-      <button class="group relative px-8 py-3 overflow-hidden font-medium rounded-xl border border-yellow-800  text-xl md:text-2xl shadow-2xl shadow-[#ff910032] mr-8 my-8">
+      <button class="get-started group relative px-8 py-3 overflow-hidden font-medium rounded-xl border border-yellow-800  text-xl md:text-2xl shadow-2xl shadow-[#ff910025] mr-8 my-8">
       <div class="absolute inset-0 w-0 bg-[#ff910032] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
       <span class=" text-white">Get Started</span>
       </button>
