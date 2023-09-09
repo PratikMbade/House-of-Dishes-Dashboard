@@ -7,7 +7,7 @@ const Navbar = () => {
         <a href='/'><img src="./assets/LOGO-text.png" alt="logo" /></a>
       </h1>
 
-      <ul className='hidden md:flex md:items-center pr-16 h-full '>
+      <ul className='hidden md:flex md:items-center h-full '>
             <li key='home' className=' text-lg font-primary px-4 h-full  transition-all duration-300   py-2 hover:text-amber-500'>
             <NavLink exact to='/' >home</NavLink>
             </li>
@@ -19,12 +19,12 @@ const Navbar = () => {
             </li>
       </ul>
           
-          <ul className='hidden md:flex md:items-center pr-16 h-full'>
+          <ul className='hidden md:flex md:items-center  h-full'>
             <li key='login' className=' pr-4 '>
-            <Link className='text-lg text-white font-primary px-4 h-full  transition-all duration-300 border border-amber-500 rounded-full hover:bg-[#ff91005a]  py-2 ' to='/login'>login</Link>
+            <Link className='text-lg text-white font-primary px-4 h-full  transition-all duration-300 border border-yellow-800 rounded-xl hover:bg-[#ff910032]  py-2 ' to='/login'>login</Link>
             </li>
             <li key='signup' >
-            <Link className='text-lg text-white font-primary px-4 h-full  transition-all duration-300 border border-amber-500 rounded-full hover:bg-[#ff91005a]  py-2 ' to='/signup'>signup</Link>
+            <Link className='text-lg text-white font-primary px-4 h-full  transition-all duration-300 border border-yellow-800 rounded-xl hover:bg-[#ff910032]  py-2 ' to='/signup'>signup</Link>
             </li>
           </ul>
            
