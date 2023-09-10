@@ -11,13 +11,13 @@ const SignupPage = () => {
   const [Cpassword, setCPassword] = useState('')
   const [showPw, setShowPw] = useState(false)
   const [showConfirmPw, setShowConfirmPw] = useState(false);
-
+  const [pwMatchError, setpwMatchError] = useState(null)
 
   const handleSubmit=(e)=>{
     e.preventDefault();
     if(password!==Cpassword)
-    {alert("passwords don't match")}
-    else alert("success")
+    {setpwMatchError(true)}
+    else setpwMatchError(null)
     console.log(e);
   }
 
@@ -26,7 +26,7 @@ const SignupPage = () => {
 
   return (
     <div className='px-4 sm:px-4 pb-16'>
-      <form className='signup  flex flex-col  justify-center z-10 items-center text-white font-primary' onSubmit={handleSubmit}>
+      <form className='signup  flex flex-col  justify-center  items-center text-white font-primary' onSubmit={handleSubmit}>
       <h3 className='text-2xl font-semibold  mt-8  text-center  py-2'>Create a new account</h3>
       <p className='text-center mb-8 text-base text-zinc-300'>Enter the fields below to get started</p>
       
@@ -85,6 +85,7 @@ const SignupPage = () => {
         onChange={(e)=>setPassword(e.target.value)} 
         value={password}
         required={true}
+        placeholder='Password'
         />
         <BiShow className={` ${showPw ? 'hidden' : 'flex'} absolute top-3 right-4 cursor-pointer`} onClick={()=>{setShowPw(!showPw)}} />
         <MdOutlineVisibilityOff className={` ${showPw ? 'flex' : 'hidden'} absolute top-3 right-4 cursor-pointer`} onClick={()=>{setShowPw(!showPw)}}/>
@@ -99,6 +100,7 @@ const SignupPage = () => {
         onChange={(e)=>setCPassword(e.target.value)}
         value={Cpassword}
         required={true}
+        placeholder='Confirm Password'
         />
          <BiShow
             className={` ${showConfirmPw ? 'hidden' : 'flex'} absolute top-3 right-4 cursor-pointer`}
@@ -109,6 +111,7 @@ const SignupPage = () => {
             onClick={()=>{setShowConfirmPw(!showConfirmPw)}}
           />
           </div>
+          {pwMatchError && <div className='text-rose-600 border-l-2  text-sm rounded border-rose-800  bg-gradient-to-r from-[#ab2c2c2a] to-transparent  px-4 py-2'>Password does not match</div>}
         </div>
         </div>
 
