@@ -1,14 +1,28 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-const SignupPage = () => {
+import {BiShow} from 'react-icons/bi'
+import {MdOutlineVisibilityOff} from 'react-icons/md'
 
+const SignupPage = () => {
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setlastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [Cpassword, setCPassword] = useState('')
+  const [showPw, setShowPw] = useState(false)
+  const [showConfirmPw, setShowConfirmPw] = useState(false);
+
 
   const handleSubmit=(e)=>{
     e.preventDefault();
+    if(password!==Cpassword)
+    {alert("passwords don't match")}
+    else alert("success")
     console.log(e);
   }
+
+
+  
 
   return (
     <div className='px-4 sm:px-4 pb-16'>
@@ -29,6 +43,9 @@ const SignupPage = () => {
         <input type="text"
         className='block w-[300px] py-2 placeholder:italic px-4 my-2 border border-zinc-600 rounded-lg bg-black'
         placeholder='First Name'
+        onChange={(e)=>setFirstName(e.target.value)} 
+        value={firstName}
+        required={true}
         />
         </div>
         <div className='my-4'>
@@ -36,6 +53,9 @@ const SignupPage = () => {
         <input type="text"
         className='block w-[300px] py-2 placeholder:italic px-4 my-2 rounded-lg border border-zinc-600  bg-black'
         placeholder='Last Name'
+        required={true}
+        onChange={(e)=>{setlastName(e.target.value)}}
+        value={lastName}
         />
         </div>
         </div>
@@ -48,6 +68,7 @@ const SignupPage = () => {
         placeholder='abc@gmail.com'
         onChange={(e)=>setEmail(e.target.value)} 
         value={email}
+        required={true}
         />
         </div>
         </div>
@@ -57,16 +78,36 @@ const SignupPage = () => {
 
         <div className='my-4'>
         <label>Password</label>
-        <input type="password"
-        className='block w-[300px] py-2 px-4 placeholder:italic my-2 border border-zinc-600 rounded-lg bg-black'
+        <div className='relative'>
+        <input type={showPw ? 'text' : 'password'}
+        className='block w-[300px]  py-2 px-4 placeholder:italic my-2 border border-zinc-600 rounded-lg bg-black'
+        onChange={(e)=>setPassword(e.target.value)} 
+        value={password}
+        required={true}
         />
+        <BiShow className={` ${showPw ? 'hidden' : 'flex'} absolute top-3 right-4 cursor-pointer`} onClick={()=>{setShowPw(!showPw)}} />
+        <MdOutlineVisibilityOff className={` ${showPw ? 'flex' : 'hidden'} absolute top-3 right-4 cursor-pointer`} onClick={()=>{setShowPw(!showPw)}}/>
+        </div>
         </div>
         <div className='my-4'>
+          
         <label>Confirm Password</label>
-        <input type="password"
+        <div className='relative'>
+        <input type={showConfirmPw ? 'text' : 'password'}
         className='block w-[300px] py-2 px-4 my-2 placeholder:italic rounded-lg border border-zinc-600  bg-black'
-        
+        onChange={(e)=>setCPassword(e.target.value)}
+        value={Cpassword}
+        required={true}
         />
+         <BiShow
+            className={` ${showConfirmPw ? 'hidden' : 'flex'} absolute top-3 right-4 cursor-pointer`}
+            onClick={()=>{setShowConfirmPw(!showConfirmPw)}}
+          />
+          <MdOutlineVisibilityOff
+            className={` ${showConfirmPw ? 'flex' : 'hidden'} absolute top-3 right-4 cursor-pointer`}
+            onClick={()=>{setShowConfirmPw(!showConfirmPw)}}
+          />
+          </div>
         </div>
         </div>
 
