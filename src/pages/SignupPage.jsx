@@ -27,7 +27,7 @@ const SignupPage = () => {
   return (
     <div className='px-4 sm:px-4 pb-16'>
       <form className='signup  flex flex-col  justify-center z-10 items-center text-white font-primary' onSubmit={handleSubmit}>
-      <h3 className='text-3xl font-semibold  mt-8  text-center  py-2'>Create a new account</h3>
+      <h3 className='text-2xl font-semibold  mt-8  text-center  py-2'>Create a new account</h3>
       <p className='text-center mb-8 text-base text-zinc-300'>Enter the fields below to get started</p>
       
       
@@ -37,7 +37,8 @@ const SignupPage = () => {
         <div className='w-[300px] h-[300px]  rounded-full absolute top-[-40px] left-[-40px] blur-3xl z-[-10] bg-[#1439b329]  '></div>
         
         
-        <div className='flex flex-col md:flex-row md:gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 md:gap-4'>
+          
         <div className='my-4'>
         <label>First Name</label>
         <input type="text"

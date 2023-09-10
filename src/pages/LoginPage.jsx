@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import {BiShow} from 'react-icons/bi'
+import {MdOutlineVisibilityOff} from 'react-icons/md'
 
 const LoginPage = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [showPw, setShowPw] = useState(false)
 
   const handleSubmit=(e)=>{
     e.preventDefault();
@@ -31,6 +34,7 @@ const LoginPage = () => {
         placeholder='abc@gmail.com'
         onChange={(e)=>setEmail(e.target.value)} 
         value={email}
+        required={true}
         />
         </div>
         </div>
@@ -40,9 +44,17 @@ const LoginPage = () => {
 
         <div className='my-4'>
         <label>Password</label>
-        <input type="password"
+        <div className='relative'>
+        <input type={showPw? 'text':'password'}
         className='block w-[300px] py-2 px-4 placeholder:italic my-2 border border-zinc-600 rounded-lg bg-black'
+        placeholder='Password'
+        onChange={(e)=>setPassword(e.target.value)}
+        value={password}
+        required={true}
         />
+        <BiShow className={` ${showPw ? 'hidden' : 'flex'} absolute top-3 right-4 cursor-pointer`} onClick={()=>{setShowPw(!showPw)}} />
+        <MdOutlineVisibilityOff className={` ${showPw ? 'flex' : 'hidden'} absolute top-3 right-4 cursor-pointer`} onClick={()=>{setShowPw(!showPw)}}/>
+        </div>
         </div>
         
         </div>
