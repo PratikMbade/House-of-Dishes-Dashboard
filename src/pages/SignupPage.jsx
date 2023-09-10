@@ -8,14 +8,14 @@ const SignupPage = () => {
   const [lastName, setlastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [Cpassword, setCPassword] = useState('')
+  const [ConfirmPassword, setConfirmPassword] = useState('')
   const [showPw, setShowPw] = useState(false)
   const [showConfirmPw, setShowConfirmPw] = useState(false);
   const [pwMatchError, setpwMatchError] = useState(null)
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    if(password!==Cpassword)
+    if(password!==ConfirmPassword)
     {setpwMatchError(true)}
     else setpwMatchError(null)
     console.log(e);
@@ -97,8 +97,8 @@ const SignupPage = () => {
         <div className='relative'>
         <input type={showConfirmPw ? 'text' : 'password'}
         className='block w-[300px] py-2 px-4 my-2 placeholder:italic rounded-lg border border-zinc-600  bg-black'
-        onChange={(e)=>setCPassword(e.target.value)}
-        value={Cpassword}
+        onChange={(e)=>setConfirmPassword(e.target.value)}
+        value={ConfirmPassword}
         required={true}
         placeholder='Confirm Password'
         />
@@ -110,8 +110,9 @@ const SignupPage = () => {
             className={` ${showConfirmPw ? 'flex' : 'hidden'} absolute top-3 right-4 cursor-pointer`}
             onClick={()=>{setShowConfirmPw(!showConfirmPw)}}
           />
+          {pwMatchError && <div className='text-rose-600 border-l-2 w-3/4 text-sm rounded border-rose-800  bg-gradient-to-r from-[#ab2c2c2a] to-transparent  px-4 py-2'>Passwords don't match</div>}
           </div>
-          {pwMatchError && <div className='text-rose-600 border-l-2  text-sm rounded border-rose-800  bg-gradient-to-r from-[#ab2c2c2a] to-transparent  px-4 py-2'>Password does not match</div>}
+          
         </div>
         </div>
 
