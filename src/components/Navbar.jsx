@@ -9,22 +9,22 @@ const Navbar = () => {
 
       <ul className='hidden md:flex md:items-center h-full '>
             <li key='home' className=' text-lg font-primary px-4 h-full  transition-all duration-300   py-2 hover:text-amber-500'>
-            <NavLink  to='/' >home</NavLink>
+            <NavLink  to='/' >Home</NavLink>
             </li>
             <li key='dashboard' className=' text-lg font-primary px-4 h-full  transition-all duration-300    py-2 hover:text-amber-500'>
-            <NavLink  to='/dashboard'>dashboard</NavLink>
+            <NavLink  to='/dashboard'>Dashboard</NavLink>
             </li>
             <li key='contact' className=' text-lg font-primary px-4 h-full  transition-all duration-300    py-2 hover:text-amber-500'>
-            <NavLink  to='/contact'>contact</NavLink>
+            <NavLink  to='/contact'>Contact</NavLink>
             </li>
       </ul>
           
           <ul className='hidden md:flex md:items-center  h-full'>
             <li key='login' className=' pr-4 '>
-            <Link className='text-lg text-white font-primary px-4 h-full  transition-all duration-300 border border-yellow-800 rounded-xl hover:bg-[#ff910032]  py-2 ' to='/login'>login</Link>
+            <Link className='text-lg text-white font-primary px-4 h-full  transition-all duration-300 border border-yellow-800 rounded-xl hover:bg-[#ff910032]  py-2 ' to='/login'>Login</Link>
             </li>
             <li key='signup' >
-            <Link className='text-lg text-white font-primary px-4 h-full  transition-all duration-300 border border-yellow-800 rounded-xl hover:bg-[#ff910032]  py-2 ' to='/signup'>signup</Link>
+            <Link className='text-lg text-white font-primary px-4 h-full  transition-all duration-300 border border-yellow-800 rounded-xl hover:bg-[#ff910032]  py-2 ' to='/signup'>Signup</Link>
             </li>
           </ul>
            
