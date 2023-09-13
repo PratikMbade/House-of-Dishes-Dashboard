@@ -7,6 +7,7 @@ const SignupPage = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setlastName] = useState('')
   const [email, setEmail] = useState('')
+  const [number, setNumber] = useState('')
   const [password, setPassword] = useState('')
   const [ConfirmPassword, setConfirmPassword] = useState('')
   const [showPw, setShowPw] = useState(false)
@@ -31,9 +32,9 @@ const SignupPage = () => {
       <p className='text-center mb-8 text-base text-zinc-300'>Enter the fields below to get started</p>
       
       
-        <div className=' bg-gradient-to-b from-zinc-600 to-black p-0.5  rounded-lg'>
+        <div className=' bg-gradient-to-b from-zinc-600 z-0 to-black p-0.5  rounded-lg'>
 
-        <div className=' bg-gradient-to-b relative from-zinc-950 to-black backdrop-filter backdrop-blur-xl h-full w-full items-center p-4  back md:p-16 rounded-lg flex flex-col justify-center'>
+        <div className=' bg-gradient-to-b relative from-zinc-950 to-black backdrop-filter backdrop-blur-xl h-full w-full items-center p-4   md:p-16 rounded-lg flex flex-col justify-center'>
         <div className='w-[300px] h-[300px]  rounded-full absolute top-[-40px] left-[-40px] blur-3xl z-[-10] bg-[#1439b329]  '></div>
         
         
@@ -69,6 +70,19 @@ const SignupPage = () => {
         placeholder='abc@gmail.com'
         onChange={(e)=>setEmail(e.target.value)} 
         value={email}
+        required={true}
+        />
+        </div>
+        </div>
+
+        <div className='flex md:gap-4 flex-col md:flex-row min-w-full'>
+        <div className='my-4 min-w-full'>
+        <label>Phone Number</label>
+        <input type="text"
+        className='block min-w-full py-2 placeholder:italic px-4 my-2 border border-zinc-600 rounded-lg bg-black'
+        placeholder='+91 0123456789'
+        onChange={(e)=>setNumber(e.target.value)} 
+        value={number}
         required={true}
         />
         </div>

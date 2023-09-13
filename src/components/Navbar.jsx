@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
-    <header className='bg-black border-b text-white border-zinc-600 py-4 sticky top-0 left-0 px-4 md:px-8 w-screen flex items-center md:justify-around'>
+    <header className='bg-black border-b text-white border-zinc-600 z-20 py-4 sticky top-0 left-0 px-4 md:px-8 w-screen flex items-center md:justify-around'>
       <h1 >
         <a href='/'><img src="./assets/LOGO-text.png" alt="logo" /></a>
       </h1>
