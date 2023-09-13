@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {BiLogoLinkedinSquare} from 'react-icons/bi'
+import Button_1 from '../components/Button_1'
 const ContactPage = () => {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
@@ -78,10 +79,7 @@ const ContactPage = () => {
 
         
 
-      <button type='submit' className="get-started group relative  px-8 py-3 overflow-hidden font-medium rounded-xl border border-yellow-800  text-xl  shadow-2xl shadow-[#ff910025]  my-8">
-      <div className="absolute inset-0 w-0 bg-[#ff910032] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-      <span className=" text-white">Send Message</span>
-      </button>
+      <Button_1 name={'Send Message'} />
 
       
         </div>

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import {BiShow} from 'react-icons/bi'
 import {MdOutlineVisibilityOff} from 'react-icons/md'
+import Button_1 from '../components/Button_1'
+import Button_2 from '../components/Button_2';
 
 const SignupPage = () => {
   const [firstName, setFirstName] = useState('')
@@ -75,7 +77,7 @@ const SignupPage = () => {
         </div>
         </div>
 
-        <div className='flex md:gap-4 flex-col md:flex-row min-w-full'>
+        {/* <div className='flex md:gap-4 flex-col md:flex-row min-w-full'>
         <div className='my-4 min-w-full'>
         <label>Phone Number</label>
         <input type="text"
@@ -86,7 +88,7 @@ const SignupPage = () => {
         required={true}
         />
         </div>
-        </div>
+        </div> */}
 
 
         <div className='flex md:gap-4 flex-col md:flex-row'>
@@ -132,13 +134,10 @@ const SignupPage = () => {
 
         
 
-        <button className="get-started group relative md:w-1/2 px-8 py-3 overflow-hidden font-medium rounded-xl border border-yellow-800  text-xl  shadow-2xl shadow-[#ff910025]  my-8">
-      <div className="absolute inset-0 w-0 bg-[#ff910032] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-      <span className=" text-white">Create Account</span>
-      </button>
+     <Button_1 name={'Create Account'}/>
 
       <p className='text-center text-zinc-300 '>Already have an account ? <Link to='/login'>
-      <button className='border rounded-xl px-4 py-1 mx-2 font-medium bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.2)_50%,transparent_75%,transparent_100%)] bg-zinc-950 relative max-w-md overflow-hidden  border-zinc-700   bg-[length:250%_250%,100%_100%] bg-[position:-100%_0,0_0] bg-no-repeat shadow-2xl transition-[background-position_0s_ease] hover:bg-[position:200%_0,0_0] hover:duration-[1200ms]'>Log In</button>
+      <Button_2 name={'Log in'}/>
       </Link></p>
         
         </div>
