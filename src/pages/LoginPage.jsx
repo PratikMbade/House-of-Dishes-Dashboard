@@ -2,18 +2,23 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import {BiShow} from 'react-icons/bi'
 import {MdOutlineVisibilityOff} from 'react-icons/md'
+import { useLogin } from '../hooks/useLogin';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 const LoginPage = () => {
+  const {user} = useAuthContext()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPw, setShowPw] = useState(false)
+  const{login, error,  isLoading, } = useLogin()
 
-  const handleSubmit=(e)=>{
+  const handleSubmit=async(e)=>{
     e.preventDefault();
-    console.log(e);
+    await login(email, password)
+    
   }
   return (
-    <div className='px-4 sm:px-4 pb-16'>
+    <div className='px-4 sm:px-4  pt-16'>
       <form className='signup  flex flex-col  justify-center z-10 items-center text-white font-primary' onSubmit={handleSubmit}>
       <h3 className='text-3xl font-semibold  mt-16  text-center  py-2'>Welcome, log in to you account</h3>
       <p className='text-center mb-8 text-base text-zinc-300'>Enter the fields below to continue</p>
@@ -36,6 +41,7 @@ const LoginPage = () => {
         value={email}
         required={true}
         />
+        
         </div>
         </div>
 
@@ -59,9 +65,10 @@ const LoginPage = () => {
         
         </div>
 
-        
+        {error && <div className='text-rose-600 border-l-2 border-r-2 w-full text-sm rounded border-rose-800 text-center  bg-[#ab2c2c2a] to-transparent  px-4 py-2'>{error}</div>}
+        {user && <div className='text-emerald-600 border-l-2 border-r-2 w-full text-sm rounded border-emerald-800 text-center  bg-[#2cab392a] to-transparent  px-4 py-2'>You are currently logged in</div>}
 
-        <button className="get-started group relative md:w-1/2 px-8 py-3 overflow-hidden font-medium rounded-xl border border-yellow-800  text-xl  shadow-2xl shadow-[#ff910025]  my-8">
+        <button disabled={isLoading} className="get-started group relative md:w-1/2 px-8 py-3 overflow-hidden font-medium rounded-xl border border-yellow-800  text-xl  shadow-2xl shadow-[#ff910025]  my-8">
       <div className="absolute inset-0 w-0 bg-[#ff910032] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
       <span className=" text-white">Log In</span>
       </button>

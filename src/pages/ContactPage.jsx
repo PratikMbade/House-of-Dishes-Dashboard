@@ -11,7 +11,7 @@ const ContactPage = () => {
     console.log(e);
   }
   return (
-    <div className='flex flex-col md:flex-row gap-8 w-screen h-screen font-primary justify-center items-center p-8'>
+    <div className=' pt-32 flex flex-col overflow-x-hidden max-w-screen md:flex-row gap-8  h-screen font-primary justify-center items-center px-8'>
 
       <div className='text-white mt-40 md:mt-0 md:my-0'>
         <h2 className='text-3xl md:text-5xl font-semibold my-4 text-transparent  bg-clip-text bg-gradient-to-b from-white to-zinc-800'>
@@ -34,7 +34,7 @@ const ContactPage = () => {
         <div className=' bg-gradient-to-b from-zinc-600 to-black p-0.5  rounded-lg w-full md:w-2/3'>
 
         <div className=' bg-gradient-to-b relative from-zinc-950 to-black backdrop-filter backdrop-blur-xl h-full w-full items-center p-4  back md:p-8 rounded-lg flex flex-col justify-center'>
-        <div className='w-[400px] h-[400px]  rounded-full absolute top-[-40px] left-[-40px] blur-3xl z-[-10] bg-[#57575729]  '></div>
+        <div className='w-[400px] h-[400px]  rounded-full absolute top-[-40px] left-[-40px] blur-3xl z-[-10] bg-[#14318629]  '></div>
         
         
         

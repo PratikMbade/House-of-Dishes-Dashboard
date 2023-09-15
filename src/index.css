@@ -16,9 +16,11 @@
    
 }
 
+
+
 body{
   background: linear-gradient(to right,#000000, #000000) ;
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .get-started {

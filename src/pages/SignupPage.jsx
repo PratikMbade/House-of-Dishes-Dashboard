@@ -4,6 +4,8 @@ import {BiShow} from 'react-icons/bi'
 import {MdOutlineVisibilityOff} from 'react-icons/md'
 import Button_1 from '../components/Button_1'
 import Button_2 from '../components/Button_2';
+import { useSignup } from '../hooks/useSignup';
+import Error from '../components/Error';
 
 const SignupPage = () => {
   const [firstName, setFirstName] = useState('')
@@ -14,21 +16,21 @@ const SignupPage = () => {
   const [ConfirmPassword, setConfirmPassword] = useState('')
   const [showPw, setShowPw] = useState(false)
   const [showConfirmPw, setShowConfirmPw] = useState(false);
-  const [pwMatchError, setpwMatchError] = useState(null)
+  const {signup, pwError, emailError, isLoading} = useSignup()
 
-  const handleSubmit=(e)=>{
+  const handleSubmit=async(e)=>{
     e.preventDefault();
-    if(password!==ConfirmPassword)
-    {setpwMatchError(true)}
-    else setpwMatchError(null)
-    console.log(e);
+    
+
+    await signup(email, firstName, lastName, password, ConfirmPassword)
+    
   }
 
 
   
 
   return (
-    <div className='px-4 sm:px-4 pb-16'>
+    <div className='px-4 sm:px-4  max-w-screen overflow-hidden py-16'>
       <form className='signup  flex flex-col  justify-center  items-center text-white font-primary' onSubmit={handleSubmit}>
       <h3 className='text-2xl font-semibold  mt-8  text-center  py-2'>Create a new account</h3>
       <p className='text-center mb-8 text-base text-zinc-300'>Enter the fields below to get started</p>
@@ -36,7 +38,7 @@ const SignupPage = () => {
       
         <div className=' bg-gradient-to-b from-zinc-600 z-0 to-black p-0.5  rounded-lg'>
 
-        <div className=' bg-gradient-to-b relative from-zinc-950 to-black backdrop-filter backdrop-blur-xl h-full w-full items-center p-4   md:p-16 rounded-lg flex flex-col justify-center'>
+        <div className=' bg-gradient-to-b  from-zinc-950 to-black backdrop-filter backdrop-blur-xl h-full w-full items-center p-4   md:p-16 rounded-lg flex flex-col justify-center'>
         <div className='w-[300px] h-[300px]  rounded-full absolute top-[-40px] left-[-40px] blur-3xl z-[-10] bg-[#1439b329]  '></div>
         
         
@@ -74,7 +76,9 @@ const SignupPage = () => {
         value={email}
         required={true}
         />
+         {emailError && <div><Error error={emailError}/></div>}
         </div>
+       
         </div>
 
         {/* <div className='flex md:gap-4 flex-col md:flex-row min-w-full'>
@@ -126,15 +130,20 @@ const SignupPage = () => {
             className={` ${showConfirmPw ? 'flex' : 'hidden'} absolute top-3 right-4 cursor-pointer`}
             onClick={()=>{setShowConfirmPw(!showConfirmPw)}}
           />
-          {pwMatchError && <div className='text-rose-600 border-l-2 w-3/4 text-sm rounded border-rose-800  bg-gradient-to-r from-[#ab2c2c2a] to-transparent  px-4 py-2'>Passwords don't match</div>}
+
           </div>
+          
           
         </div>
         </div>
+        {pwError && <Error error={pwError}/>}
 
         
 
-     <Button_1 name={'Create Account'}/>
+        <button disabled={isLoading} className="get-started group relative md:w-1/2 px-8 py-3 overflow-hidden font-medium rounded-xl border border-yellow-800  text-xl  shadow-2xl shadow-[#ff910025]  my-8">
+        <div className="absolute inset-0 w-0 bg-[#ff910032] transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+        <span className=" text-white">Create Account</span>
+        </button>
 
       <p className='text-center text-zinc-300 '>Already have an account ? <Link to='/login'>
       <Button_2 name={'Log in'}/>

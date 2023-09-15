@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { VscDebugStart } from "react-icons/vsc";
 const HomePage = () => {
   return (
-    <div className=' min-h-screen text-white flex flex-col-reverse lg:flex-row md:gap-16 md:items-center justify-center font-primary px-8'>
+    <div className=' min-h-screen py-20 text-white flex flex-col-reverse lg:flex-row md:gap-16 md:items-center justify-center font-primary px-8'>
       
       <div className='left-section relative w-full md:w-1/2'>
       <div className='w-[300px] h-[300px] z-1 rounded-full absolute top-[-40px] left-[-40px] blur-3xl  bg-[#fbdd451c]  '></div>
