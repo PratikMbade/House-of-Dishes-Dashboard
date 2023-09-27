@@ -5,11 +5,24 @@
 
 .active{
     color: #f59e0b;
+   
+    padding: 6px;
+    border-radius: 10px;
+    border: 1px solid #474747;
+    
+    background: linear-gradient(to right,#131313, #000000) ;
+    transition-duration: 400ms ;
+    transition-timing-function: ease-in-out;
+   
 }
+
+
 
 body{
     background: #000;
     overflow-x: hidden;
+  background: linear-gradient(to right,#000000, #000000) ;
+  overflow-x: hidden;
 }
 
 .get-started {
